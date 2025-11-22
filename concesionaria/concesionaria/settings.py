@@ -69,7 +69,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'concesionaria.concesionaria.urls'
+ROOT_URLCONF = 'concesionaria.urls'
 
 TEMPLATES = [
     {
