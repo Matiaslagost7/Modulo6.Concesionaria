@@ -5,8 +5,8 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib import messages
 from .models import CustomUser
-from myapp_conces.models import Automovil
-from myapp_conces.forms import AutomovilForm
+from concesionaria.myapp_conces.models import Automovil
+from concesionaria.myapp_conces.forms import AutomovilForm
 from .mixins import verificar_login_y_permisos, solo_login_requerido
 
 # ========================================================================
