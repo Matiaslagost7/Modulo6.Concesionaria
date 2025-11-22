@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'testserver']
 # ==================================
 # CONFIGURACIÓN DE AUTENTICACIÓN
 # ==================================
-AUTH_USER_MODEL = 'myapp_login.CustomUser'
+AUTH_USER_MODEL = 'concesionaria.myapp_login.CustomUser'
 
 # Configuración de autenticación obligatoria
 LOGIN_URL = '/login/'           # Página de login obligatoria para @login_required
@@ -53,8 +53,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp_login',
-    'myapp_conces'
+    'concesionaria.myapp_login',
+    'concesionaria.myapp_conces'
 ]
 
 MIDDLEWARE = [
