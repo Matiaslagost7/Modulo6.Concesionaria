@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ws-4#qxr!bf2%c6w)$atsrz8be58j##u_@t9k(=v+m%sr)^90p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'testserver']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'testserver', 'modulo6-concesionaria.onrender.com', '.onrender.com']
 
 # ==================================
 # CONFIGURACIÓN DE AUTENTICACIÓN
@@ -67,7 +67,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'concesionaria.urls'
+ROOT_URLCONF = 'concesionaria.concesionaria.urls'
 
 TEMPLATES = [
     {
