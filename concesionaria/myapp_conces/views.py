@@ -131,7 +131,10 @@ def finalizar_compra(request):
             auto.cantidad -= item.cantidad
         else:
             auto.cantidad = 0
-        if auto.cantidad == 0:
+        # Actualizar disponibilidad según cantidad
+        if auto.cantidad > 0:
+            auto.disponible = True
+        else:
             auto.disponible = False
         auto.save()
     compra = Compra.objects.create(usuario=request.user, carrito=carrito, total=total)

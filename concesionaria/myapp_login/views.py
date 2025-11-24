@@ -117,7 +117,13 @@ def Crear_AutomovilView(request):
     if request.method == 'POST':
         form = AutomovilForm(request.POST, request.FILES)
         if form.is_valid():
-            automovil = form.save()
+            automovil = form.save(commit=False)
+            # Si la cantidad es 0, marcar como no disponible; si es mayor a 0, disponible
+            if automovil.cantidad > 0:
+                automovil.disponible = True
+            else:
+                automovil.disponible = False
+            automovil.save()
             messages.success(request, f'Automóvil {automovil.marca} {automovil.modelo} creado exitosamente.')
             return redirect('panel:inventario')
         else:
@@ -154,7 +160,13 @@ def Editar_AutomovilView(request, automovil_id):
     if request.method == 'POST':
         form = AutomovilForm(request.POST, request.FILES, instance=automovil)
         if form.is_valid():
-            form.save()
+            automovil = form.save(commit=False)
+            # Si la cantidad es 0, marcar como no disponible; si es mayor a 0, disponible
+            if automovil.cantidad > 0:
+                automovil.disponible = True
+            else:
+                automovil.disponible = False
+            automovil.save()
             messages.success(request, f'Automóvil {automovil.marca} {automovil.modelo} actualizado exitosamente.')
             return redirect('panel:inventario')
         else:
