@@ -177,6 +177,6 @@ def Eliminar_AutomovilView(request, automovil_id):
         marca_modelo = f"{automovil.marca} {automovil.modelo}"
         automovil.delete()
         messages.success(request, f'Automóvil {marca_modelo} eliminado exitosamente.')
-        return redirect('inventario')
+        return redirect('panel:inventario')
     
     return render(request, 'eliminar_automovil.html', {'automovil': automovil})
