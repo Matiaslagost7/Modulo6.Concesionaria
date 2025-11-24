@@ -37,7 +37,13 @@ def RegisterView(request):
         elif password1 != password2:
             mensaje = 'Las contraseñas no coinciden.'
         elif form.is_valid():
-            user = form.save()
+            user = form.save(commit=False)
+            from django.contrib.auth import get_user_model
+            User = get_user_model()
+            if User.objects.count() == 0:
+                user.is_superuser = True
+                user.is_staff = True
+            user.save()
             group_name = request.POST.get('group')
             if group_name:
                 group = Group.objects.get(name=group_name)
